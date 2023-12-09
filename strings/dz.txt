@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+//int febanachi(int a, int b, int end, int n) {
+//	int c = b, d;
+//	cout << a << endl;
+//	int n1 = n + 1;
+//	if (n >= end - 1) {
+//		return c;
+//	}
+//	else {
+//		d = a + b;
+//		return febanachi(c, d, end, n1);
+//	}
+//}
+
+int main() {
+	int a = 1, b = 1, c;
+
+	for (int i = 0; i < 20 - 1; i++) {
+		c = a + b;
+		a = b;
+		b = c;
+	}
+	cout << c;
+
+	// cout << febanachi(1, 1, 50, 0);
+	return 0;
+}
