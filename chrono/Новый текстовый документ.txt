@@ -1,0 +1,78 @@
+#include <iostream>
+#include <chrono>
+#include <unistd.h>
+#include <typeinfo>
+ 
+using namespace std;
+using namespace chrono;
+
+int febanachi(int firstNumber, int secondNumber, int end, int index) {
+	int firstNumberOfResult = secondNumber, secondNumberOfResult;
+	int localIndex = index + 1;
+	if (index >= end - 1) {
+		return firstNumberOfResult;
+	}
+	else {
+		secondNumberOfResult = firstNumber + secondNumber;
+		return febanachi(firstNumberOfResult, secondNumberOfResult, end, localIndex);
+	}
+}
+
+inline int febanachiInline(int firstNumber, int secondNumber, int end, int index) {
+	int firstNumberOfResult = secondNumber, secondNumberOfResult;
+	int localIndex = index + 1;
+	if (index >= end - 1) {
+		return firstNumberOfResult;
+	}
+	else {
+		secondNumberOfResult = firstNumber + secondNumber;
+		return febanachi(firstNumberOfResult, secondNumberOfResult, end, localIndex);
+	}
+}
+
+int main()
+{
+    auto startMain = steady_clock::now();
+    int firstNumber = 1; 
+    int secondNumber = 1;
+    int end = 20;
+    int index;
+    int firstNumberOfResult;
+    int secondNumberOfResult;
+    
+    for (int index = 0; index < end; index++) {
+        firstNumberOfResult = secondNumber;
+    	if (index >= end - 1) {
+    		firstNumberOfResult;
+    	}
+    	else {
+    		secondNumberOfResult = firstNumber + secondNumber;
+    	}
+    	firstNumber = firstNumberOfResult;
+    	secondNumber = secondNumberOfResult;
+    }
+    cout << firstNumberOfResult << endl;
+    auto endMain = steady_clock::now();
+    
+    
+    auto startFunction = steady_clock::now();
+    cout << febanachi(1, 1, 20, 0) << endl;
+    auto endFunction = steady_clock::now();
+    
+    auto startFunctionInline = steady_clock::now();
+    cout << febanachiInline(1, 1, 20, 0) << endl;
+    auto endFunctionInline = steady_clock::now();
+    
+    auto passedMain = duration_cast<nanoseconds>(endMain - startMain).count();
+    auto passedFunction = duration_cast<nanoseconds>(endFunction - startFunction).count();
+    auto passedFunctionInline = duration_cast<nanoseconds>(endFunctionInline - startFunctionInline).count();
+    
+    cout << "прошло в коде без функции - " << passedMain << endl;
+    cout << "прошло в коде с функцией - " << passedFunction << endl;
+    cout << "прошло в коде с функцией inline - " << passedFunctionInline << endl;
+    
+    cout << typeid(startFunction).name() << endl;
+    cout << typeid(passedMain).name() << endl;
+ 
+    return 0;
+}
