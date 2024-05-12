@@ -1,4 +1,0 @@
-﻿  strings.cpp
-C:\Users\Azat\Desktop\DZ\strings\strings\strings.cpp(84,35): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Azat\Desktop\DZ\strings\strings\strings.cpp(84,63): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-  strings.vcxproj -> C:\Users\Azat\Desktop\DZ\strings\x64\Debug\strings.exe
