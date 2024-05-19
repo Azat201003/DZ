@@ -12,10 +12,10 @@ public:
 
 	class Date {
 	public:
-		unsigned int years;
+		int years;
 		unsigned int month;
 		unsigned int days;
-		Date(unsigned int _years, unsigned int _month, unsigned int _days) {
+		Date(int _years, unsigned int _month, unsigned int _days) {
 			if (_month > 12)
 				throw invalid_argument("month is bigger than 12");
 
@@ -34,7 +34,18 @@ public:
 			month = _month;
 			days  = _days ;
 		}
+		Date() {
+			years = 2000;
+			month = 0;
+			days  = 0;
+		}
 	};
+
+	Student(string _firstName, 
+			string _lastName, 
+			Date   _birthday, 
+			Gender _gender);
+	Student();
 
 	Date		 getBirthday () const;
 	string		 getFirstName() const;
@@ -50,9 +61,8 @@ public:
 private:
 	string firstName;
 	string lastName;
-	int age;
 	Gender gender;
 	Date birthday;
-	Student();
+	int age;
 };
 

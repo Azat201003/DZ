@@ -1,5 +1,21 @@
 #include "Student.h"
 
+Student::Student(string _firstName, string _lastName, Date _birthday, Gender _gender) {
+    firstName = _firstName;
+    lastName = _lastName;
+    birthday = _birthday;
+    gender = _gender;
+    age = 24; // я не представляю пока как от настоящего времени отнять его др
+}
+
+Student::Student() {
+    firstName = "none first name";
+    lastName = "none last name";
+    birthday = Date();
+    gender = Gender::male;
+    age = 24; // примерно
+}
+
 
 string Student::getFirstName() const {
     return firstName;

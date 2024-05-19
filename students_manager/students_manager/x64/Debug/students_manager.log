@@ -1,0 +1,5 @@
+﻿  Journal.cpp
+C:\Users\Azat\Documents\GitHub\dz\students_manager\students_manager\Student.h(27,44): warning C4838: Преобразование из "int" в "unsigned int" требует сужающего преобразования.
+C:\Users\Azat\Documents\GitHub\dz\students_manager\students_manager\Journal.cpp(21,24): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Azat\Documents\GitHub\dz\students_manager\students_manager\Journal.cpp(31,24): warning C4018: >: несоответствие типов со знаком и без знака
+  students_manager.vcxproj -> C:\Users\Azat\Documents\GitHub\dz\students_manager\x64\Debug\students_manager.exe
