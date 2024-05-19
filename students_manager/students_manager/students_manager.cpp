@@ -37,4 +37,10 @@ int main() {
 
 	cout << endl;
 	Journal::print(journal.getMoreAgeThan(18));
+
+	journal.WTF("students.txt");
+
+	/*Journal journal("students.txt");
+	journal.WTF("students.txt");
+	journal.print();*/
 }

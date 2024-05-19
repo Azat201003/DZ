@@ -1,0 +1,3 @@
+Coolov,Men,19,2000.0.0,male,
+Ulyanov,Vladimir,24,2000.0.0,female,
+Uzbekov,Uzbek,24,2000.0.0,male,
